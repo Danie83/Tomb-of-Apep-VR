@@ -9,3 +9,5 @@
 [Generare Labirint](https://drive.google.com/file/d/1LWKmmWliDbrgg6fS7O8IdBFxP4hit0sI/view?usp=sharing)
 
 [Mock Start Menu](https://drive.google.com/file/d/1oj6t-qt0zlm0AZxSYAhwDGEMdIRmpBA-/view?usp=sharing)
+
+[Enterance Scene](https://drive.google.com/file/d/193mtcnqi3EGThnPd42HOcnAPOx_4oXF8/view?usp=sharing)
