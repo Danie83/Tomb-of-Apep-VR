@@ -13,3 +13,7 @@
 [Enterance Scene](https://drive.google.com/file/d/193mtcnqi3EGThnPd42HOcnAPOx_4oXF8/view?usp=sharing)
 
 [Lever Model](https://drive.google.com/file/d/11uG9OLxmm62vrHNwSmWV5vvx-fJMKTnE/view?usp=sharing)
+
+## Prezentare saptamana 8
+
+[Prezentare](https://docs.google.com/presentation/d/1R9b6OXWS4756eWnuDD25RAiMhcxCtdPz/edit?usp=sharing&ouid=110616479419244397017&rtpof=true&sd=true)
