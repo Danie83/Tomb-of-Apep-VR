@@ -7,19 +7,29 @@ public class MenuController : MonoBehaviour
     InputActionProperty menuToggle;
     public int MenuToggle { get; set; }
 
-    GameObject menuObject = null;
-
     [SerializeField]
     bool isActive = true;
 
     [SerializeField]
     MenuBaseComponent currentPanel;
 
-    private void Start()
+    GameObject menuObject = null;
+
+    private void Awake()
     {
-        currentPanel.ToggleActive(true);
         menuObject = this.gameObject;
+        HideAllMenus();
+        currentPanel.ToggleActive(true);
         menuToggle.action.started += ToggleShowMenu;
+    }
+
+    private void HideAllMenus()
+    {
+        MenuBaseComponent[] components = menuObject.GetComponentsInChildren<MenuBaseComponent>();
+        foreach (MenuBaseComponent component in components)
+        {
+            component.ToggleActive(false);
+        }
     }
 
     private void ToggleShowMenu(InputAction.CallbackContext context)
