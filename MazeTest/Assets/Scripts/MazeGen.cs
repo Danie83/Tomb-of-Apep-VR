@@ -9,6 +9,7 @@ public enum WallState
     RIGHT = 2, // 0010
     UP = 4, // 0100
     DOWN = 8, // 1000
+    ALLROUND = 15, // 1111
 
     VISITED = 128,
 }

@@ -75,61 +75,82 @@ public class MazeRenderer : MonoBehaviour
                     var roomPosition = position;
                     roomPosition.y = -0.5f;
                     Instantiate(roomPrefab, roomPosition, Quaternion.identity);
+                    maze[i, j] = WallState.ALLROUND;
                 }
             }
         }
 
-        int randomTreasureTrove1 = Random.Range(1, width / 2 - 1);
-        int randomTreasureTrove2 = Random.Range(width/2 + 1, width - 1);
+        int randomTreasureTrove1 = Random.Range(2, width / 2 - 1);
+        int randomTreasureTrove11 = Random.Range(randomTreasureTrove1, width / 2 - 1);
+        int randomTreasureTrove2 = Random.Range(width / 2 + 2, width - 1);
+        int randomTreasureTrove22 = Random.Range(randomTreasureTrove2, width - 1);
 
-        Instantiate(roomPrefab, new Vector3(-width / 2 + randomTreasureTrove1, -0.5f, -height / 2 + Random.Range(randomTreasureTrove1, width / 2 - 1)), Quaternion.identity);
-        Instantiate(roomPrefab, new Vector3(-width / 2 + randomTreasureTrove2, -0.5f, -height / 2 + Random.Range(randomTreasureTrove2, width - 1)), Quaternion.identity);
+        //Random.Range(0, 3); // is inclusive
+        int rotation1 = Random.Range(0, 3);
+        var room1 = Instantiate(roomPrefab, new Vector3(-width / 2 + randomTreasureTrove1,
+            -0.5f, -height / 2 + randomTreasureTrove11),
+            Quaternion.identity);
+        maze[randomTreasureTrove1, randomTreasureTrove11] = WallState.ALLROUND;
+        room1.eulerAngles = new Vector3(0, rotation1 * 90, 0);
+        
+        int rotation2 = Random.Range(0, 3);
+        var room2 = Instantiate(roomPrefab, new Vector3(-width / 2 + randomTreasureTrove2,
+            -0.5f, -height / 2 + randomTreasureTrove22),
+            Quaternion.identity);
+        room2.eulerAngles = new Vector3(0, rotation2 * 90, 0);
+        maze[randomTreasureTrove2, randomTreasureTrove22] = WallState.ALLROUND;
 
-        //for (int i = 0; i < width; ++i)
-        //{
-        //    for (int j = 0; j < height; ++j)
-        //    {
-        //        WallState cell = maze[i, j];
-        //        var position = new Vector3(-width / 2 + i, 0, -height / 2 + j);
+        for (int i = 0; i < width; ++i)
+        {
+            for (int j = 0; j < height; ++j)
+            {
+                WallState cell = maze[i, j];
+                var position = new Vector3(-width / 2 + i, 0, -height / 2 + j);
 
-        //        if (cell.HasFlag(WallState.UP))
-        //        {
-        //            var topWall = Instantiate(wallPrefab, transform) as Transform;
-        //            topWall.localPosition = position + new Vector3(0, 0, size / 2);
-        //            topWall.localScale = new Vector3(5, topWall.localScale.y, topWall.localScale.z);
-        //        }
 
-        //        if (cell.HasFlag(WallState.LEFT))
-        //        {
-        //            var leftWall = Instantiate(wallPrefab, transform) as Transform;
-        //            leftWall.localPosition = position + new Vector3(-size / 2, 0, 0);
-        //            leftWall.localScale = new Vector3(5, leftWall.localScale.y, leftWall.localScale.z);
-        //            leftWall.eulerAngles = new Vector3(90, 0, 0);
-        //        }
+                if (cell.HasFlag(WallState.UP))
+                {
+                    Debug.Log("yes");
+                    var topWall = Instantiate(wallPrefab, transform) as Transform;
+                    topWall.localPosition = position + new Vector3(0, 0, size / 2);
+                    topWall.localScale = new Vector3(5, topWall.localScale.y, topWall.localScale.z);
+                }
 
-        //        if (i == width - 1)
-        //        {
-        //            if (cell.HasFlag(WallState.RIGHT))
-        //            {
-        //                var rightWall = Instantiate(wallPrefab, transform) as Transform;
-        //                rightWall.localPosition = position + new Vector3(+size / 2, 0, 0);
-        //                rightWall.localScale = new Vector3(5, rightWall.localScale.y, rightWall.localScale.z);
-        //                rightWall.eulerAngles = new Vector3(90, 0, 0);
-        //            }
-        //        }
+                if (cell.HasFlag(WallState.LEFT))
+                {
+                    var leftWall = Instantiate(wallPrefab, transform) as Transform;
+                    leftWall.localPosition = position + new Vector3(-size / 2, 0, 0);
+                    leftWall.localScale = new Vector3(5, leftWall.localScale.y, leftWall.localScale.z);
+                    leftWall.eulerAngles = new Vector3(90, 0, 0);
+                }
 
-        //        if (j == 0)
-        //        {
-        //            if (cell.HasFlag(WallState.DOWN))
-        //            {
-        //                var downWall = Instantiate(wallPrefab, transform) as Transform;
-        //                downWall.localPosition = position + new Vector3(0, 0, -size / 2);
-        //                downWall.localScale = new Vector3(5, downWall.localScale.y, downWall.localScale.z);
-        //            }
-        //        }
-        //    }
+                if (i == width - 1)
+                {
+                    if (cell.HasFlag(WallState.RIGHT))
+                    {
+                        var rightWall = Instantiate(wallPrefab, transform) as Transform;
+                        rightWall.localPosition = position + new Vector3(+size / 2, 0, 0);
+                        rightWall.localScale = new Vector3(5, rightWall.localScale.y, rightWall.localScale.z);
+                        rightWall.eulerAngles = new Vector3(90, 0, 0);
+                    }
+                }
 
-        //}
+                if (j == 0)
+                {
+                    if (cell.HasFlag(WallState.DOWN))
+                    {
+                        var downWall = Instantiate(wallPrefab, transform) as Transform;
+                        downWall.localPosition = position + new Vector3(0, 0, -size / 2);
+                        downWall.localScale = new Vector3(5, downWall.localScale.y, downWall.localScale.z);
+                    }
+                }
+                Debug.Log(i);
+                Debug.Log(j);
+                Debug.Log(cell);
+
+            }
+
+        }
 
     }
 
