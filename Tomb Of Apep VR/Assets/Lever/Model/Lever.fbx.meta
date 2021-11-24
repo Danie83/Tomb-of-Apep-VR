@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 098457a853c020f4ea1784f370d27e03
+guid: 6d18d1275d111ee469250dd33a52d08a
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -18,12 +18,12 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: sand
-    second: {fileID: 2800000, guid: ceb177bd873935f4985a3f936c2b7787, type: 3}
+    second: {fileID: 2800000, guid: e98f475ab88e729459fea574ba590ae9, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: sandBase
-    second: {fileID: 2800000, guid: d30e2d14eb7a3b04eb93843ad239d1ea, type: 3}
+    second: {fileID: 2800000, guid: 4ba281edb563a3845ae7629122f35243, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
