@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class LeverControll : MonoBehaviour
 {
@@ -8,9 +7,23 @@ public class LeverControll : MonoBehaviour
     private float forwardBackwardTilt = 0f;
 
     [SerializeField]
+    InputActionProperty leftGrabHandle;
+    [SerializeField]
+    InputActionProperty rightGrabHandle;
+
+    [SerializeField]
     private bool isActivated = false;
+
+    private bool isGrabing = false;
     public bool IsActivated { get => isActivated; }
 
+    private void Start()
+    {
+        leftGrabHandle.action.started += (context) => { isGrabing = true; };
+        leftGrabHandle.action.canceled += (context) => { isGrabing = false; };
+        rightGrabHandle.action.started += (context) => { isGrabing = true; };
+        rightGrabHandle.action.canceled += (context) => { isGrabing = false; };
+    }
 
     // Update is called once per frame
     void Update()
@@ -38,7 +51,7 @@ public class LeverControll : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("PlayerHand"))
+        if (other.CompareTag("PlayerHand") && isGrabing)
         {
             transform.LookAt(other.transform.position, transform.up);
             // Make sure enemy's rotation is clamped between -45 and 45 degrees
