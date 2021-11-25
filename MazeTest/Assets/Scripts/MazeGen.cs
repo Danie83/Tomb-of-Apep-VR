@@ -9,7 +9,6 @@ public enum WallState
     RIGHT = 2, // 0010
     UP = 4, // 0100
     DOWN = 8, // 1000
-    ALLROUND = 15, // 1111
 
     VISITED = 128,
 }
@@ -74,7 +73,7 @@ public static class MazeGen
     public static List<Neighbour> getUnvisitedNeighbours(Position pos, WallState[,] maze, int width, int height)
     {
         var list = new List<Neighbour>();
-        if (pos.xpos > 0) // left
+        if (pos.xpos > 0) // up
         {
             if (!maze[pos.xpos - 1,pos.ypos].HasFlag(WallState.VISITED)) {
                 list.Add(new Neighbour{
@@ -83,12 +82,12 @@ public static class MazeGen
                         xpos = pos.xpos - 1, 
                         ypos = pos.ypos 
                     },
-                    sharedWall = WallState.LEFT
+                    sharedWall = WallState.UP
                 });
             }
         }
 
-        if (pos.ypos > 0) // down
+        if (pos.ypos > 0) // left
         {
             if (!maze[pos.xpos , pos.ypos - 1].HasFlag(WallState.VISITED))
             {
@@ -99,12 +98,12 @@ public static class MazeGen
                         xpos = pos.xpos,
                         ypos = pos.ypos - 1
                     },
-                    sharedWall = WallState.DOWN
+                    sharedWall = WallState.LEFT
                 });
             }
         }
 
-        if (pos.ypos < height - 1) // up
+        if (pos.ypos < height - 1) // right
         {
             if (!maze[pos.xpos, pos.ypos + 1].HasFlag(WallState.VISITED))
             {
@@ -115,12 +114,12 @@ public static class MazeGen
                         xpos = pos.xpos,
                         ypos = pos.ypos + 1
                     },
-                    sharedWall = WallState.UP
+                    sharedWall = WallState.RIGHT
                 });
             }
         }
 
-        if (pos.xpos < width - 1) // right
+        if (pos.xpos < width - 1) // down
         {
             if (!maze[pos.xpos + 1, pos.ypos].HasFlag(WallState.VISITED))
             {
@@ -131,7 +130,7 @@ public static class MazeGen
                         xpos = pos.xpos + 1,
                         ypos = pos.ypos
                     },
-                    sharedWall = WallState.RIGHT
+                    sharedWall = WallState.DOWN
                 });
             }
         }
@@ -148,6 +147,7 @@ public static class MazeGen
             for (int j = 0; j < height; ++j)
             {
                 maze[i, j] = initial; // 1111
+
             }
         }
 
