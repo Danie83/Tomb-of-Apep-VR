@@ -249,10 +249,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18b88a5c1a9937244969cc69d758bc80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 15
-  height: 15
-  size: 1
-  wallPrefab: {fileID: 5103058937446993592, guid: d4515496a0d55354d834fb0cd48d244d, type: 3}
+  width: 16
+  height: 16
+  size: 2
+  wallPrefab: {fileID: 1221858803505001882, guid: 4394604a7b626844bb86dd2f0e1f19e8, type: 3}
   floorPrefab: {fileID: 8202366531558512449, guid: 364a5538640343d47bad1ed6a89b01bf, type: 3}
   roomPrefab: {fileID: 8609216289079290856, guid: 1d5b794bd7469f846be7a3a8e9fce7a1, type: 3}
 --- !u!1 &1839424378
