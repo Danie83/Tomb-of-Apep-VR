@@ -5,6 +5,7 @@ using UnityEngine;
 public class MazeRenderer : MonoBehaviour
 {
 
+    [Header("Settings")]
     [SerializeField]
     [Range(5, 50)]
     private int width = 11;
@@ -16,6 +17,13 @@ public class MazeRenderer : MonoBehaviour
     [SerializeField]
     private float size = 2f;
 
+    [SerializeField]
+    private bool renderCeiling = false;
+
+    [SerializeField]
+    private bool renderFloor = true;
+
+    [Header("Prefabs")]
     [SerializeField]
     private Transform wallPrefab = null;
 
@@ -53,7 +61,10 @@ public class MazeRenderer : MonoBehaviour
                 var position = new Vector3(-width + i * 2 + 1 , 0, -height + j * 2 + 1);
                 Debug.Log(position);
 
-                Instantiate(floorPrefab, position, Quaternion.identity, transform);
+                if (renderFloor)
+                    Instantiate(floorPrefab, position + Vector3.up * transform.position.y, Quaternion.identity, transform);
+                if (renderCeiling)
+                    Instantiate(floorPrefab, position + Vector3.up * (transform.position.y + size), Quaternion.identity, transform);
 
                 if (cell.HasFlag(WallState.UP))
                 {
