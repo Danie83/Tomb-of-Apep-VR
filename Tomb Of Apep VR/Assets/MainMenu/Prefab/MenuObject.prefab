@@ -2926,10 +2926,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   difficultySetting: {fileID: 4871908024177216050}
-  tutorialScene:
-    m_Handle: 0
-  mainScene:
-    m_Handle: 0
+  playTutorial: {fileID: 6979948236990953275}
+  tutorialScene: 1
+  mainScene: 0
 --- !u!1 &4647482213977993145
 GameObject:
   m_ObjectHideFlags: 0
