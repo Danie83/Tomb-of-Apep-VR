@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3221490712195673424}
   - component: {fileID: 4349437261958581082}
-  - component: {fileID: 1471717835206299974}
+  - component: {fileID: 1285518605346180784}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: PlayerHand
@@ -49,8 +49,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &1471717835206299974
-BoxCollider:
+--- !u!135 &1285518605346180784
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -60,8 +60,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.07, y: 0.08, z: 0.1}
-  m_Center: {x: -0.005, y: -0.05, z: -0.03}
+  m_Radius: 0.04
+  m_Center: {x: 0, y: -0.04, z: -0.03}
 --- !u!1001 &5585145757130155644
 PrefabInstance:
   m_ObjectHideFlags: 0
