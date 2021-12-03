@@ -5,8 +5,9 @@ using UnityEngine;
 public class OpenChestScript : MonoBehaviour
 {
     public bool locked = true;
-    public GameObject explosiveChest;
-    public GameObject openableChest;
+    public GameObject explosiveChest = null;
+    public GameObject openableChest = null;
+    public GameObject itemPrefab = null;
     public int selected = -1;
     private Transform copy;
 
@@ -48,6 +49,7 @@ public class OpenChestScript : MonoBehaviour
     {
         selected = 2;
         GameObject openableObj = Instantiate(openableChest, copy.position, copy.rotation) as GameObject;
-        Transform tr = openableObj.GetComponent<Transform>();
+        Transform spawnAnchor = openableObj.GetComponentInChildren<ItemSpawnAnchor>().transform;
+        Instantiate(itemPrefab, spawnAnchor.position, spawnAnchor.rotation);
     }
 }

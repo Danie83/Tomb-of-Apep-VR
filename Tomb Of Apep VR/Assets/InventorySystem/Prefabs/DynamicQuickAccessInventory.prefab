@@ -44,13 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ff21e55b14c7040965d595e73a383f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand: {fileID: 0}
+  slots: []
   inserter: {fileID: 1024697731422242201}
   invSlotPrefab: {fileID: 6526649226744664790, guid: 909ec1d063c139f48bfbc424e1a0ff95,
     type: 3}
-  radius: 1.69
-  separation: 1.5
   maxSlots: 5
+  hand: {fileID: 0}
+  radius: 2
+  separation: 1.4
 --- !u!1 &2577176758339526837
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,6 +106,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -129,6 +132,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &3992589597574339109
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,6 +191,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -211,6 +217,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &1024697731422242201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,6 +297,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -314,3 +323,4 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}

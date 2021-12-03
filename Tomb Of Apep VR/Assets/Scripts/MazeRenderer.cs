@@ -30,9 +30,6 @@ public class MazeRenderer : MonoBehaviour
     [SerializeField]
     private Transform floorPrefab = null;
 
-    [SerializeField]
-    private Transform roomPrefab = null;
-
     // Start is called before the first frame update
     void Start()
     {
