@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2598270481580993702}
   - component: {fileID: 2598270481580993703}
   - component: {fileID: 2598270481580993700}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: LockedChest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
