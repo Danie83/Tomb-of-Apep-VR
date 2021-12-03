@@ -4148,6 +4148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minForce: 10
-  maxForce: 20
-  radius: 1
+  maxForce: 100
+  radius: 10
   destroyDelay: 5
