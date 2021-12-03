@@ -53,6 +53,7 @@ MonoBehaviour:
     type: 3}
   openableChest: {fileID: 2707784251603315026, guid: 41999b424c116824c81908b740957203,
     type: 3}
+  itemPrefab: {fileID: 0}
   selected: -1
 --- !u!54 &2598270481580993703
 Rigidbody:
