@@ -791,16 +791,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5083551674673033630, guid: 0a20f95b33b7a174db7249cb35ab87cb,
         type: 3}
-    - target: {fileID: 2598270481580993703, guid: 279f2eceabd25e449ba16686e6997dfb,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2598270481580993703, guid: 279f2eceabd25e449ba16686e6997dfb,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3406191983943022111, guid: 279f2eceabd25e449ba16686e6997dfb,
         type: 3}
       propertyPath: m_RootOrder
