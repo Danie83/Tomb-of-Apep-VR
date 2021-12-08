@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class NewGameMenu : MenuBaseComponent
 {
@@ -8,7 +9,14 @@ public class NewGameMenu : MenuBaseComponent
     private TMP_Dropdown difficultySetting;
 
     private TMP_Dropdown.OptionData[] options;
+
+    [SerializeField]
     private Toggle playTutorial;
+
+    [SerializeField]
+    public int tutorialScene;
+    [SerializeField]
+    public int mainScene;
 
     public void Start()
     {
@@ -25,5 +33,15 @@ public class NewGameMenu : MenuBaseComponent
     public bool ToPlayTutorial()
     {
         return playTutorial.isOn;
+    }
+
+    public void OpenScene()
+    {
+        if (ToPlayTutorial())
+            SceneManager.LoadScene(tutorialScene);
+        else
+            SceneManager.LoadScene(mainScene);
+
+
     }
 }
