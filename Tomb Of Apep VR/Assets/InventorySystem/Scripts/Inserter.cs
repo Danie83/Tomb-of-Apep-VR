@@ -9,19 +9,6 @@ namespace GVRI
 
         public delegate Slot notifyIncomingItem(Inserter inserter, Item i);
         public notifyIncomingItem target = null;
-        /*
-        */
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
 
         private void OnTriggerStay(Collider other)
         {
