@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 namespace GVRI{
     public class Hand : MonoBehaviour
     {
         public XRNode node;
         public InputDevice device;
+        public ActionBasedController input;
 
         public GameObject gameObjectInHand = null;
 
@@ -35,19 +37,18 @@ namespace GVRI{
             velocity = delta / Time.deltaTime;
             oldPos = newPos;
 
-            if (!device.isValid)
+/*            if (!device.isValid)
             {//device cannot give input
                 device = InputDevices.GetDeviceAtXRNode(node);
                 if (!device.isValid) return; //this happens if for example the controller is turned off
-            }
+            }*/
 
-            bool triggerValue = false;
-            if (device.TryGetFeatureValue(CommonUsages.triggerButton, out triggerValue))
-            {
-                //was able to get input from device, so sending the result to input function to handle
-                Input(triggerValue);
-            }
+            bool triggerValue =  input.selectAction.action.ReadValue<float>() > 0;
+            Debug.Log(triggerValue);
+            //was able to get input from device, so sending the result to input function to handle
+            Input(triggerValue);
 
+            
             lastTriggerState = triggerValue;
 
         
@@ -96,9 +97,13 @@ namespace GVRI{
             Rigidbody go_rb = gameObjectInHand.GetComponent<Rigidbody>();
             if (go_rb)
             {
+                go_rb.constraints = RigidbodyConstraints.None;
+
                 go_rb.isKinematic = false;
                 //apply throw
                 go_rb.velocity = velocity;
+
+                
             }        
 
             gameObjectInHand = null;
@@ -111,7 +116,7 @@ namespace GVRI{
             //disable physics for the time being
             Rigidbody rb = go.GetComponent<Rigidbody>();
             if (rb)
-                rb.isKinematic = true;
+                rb.constraints = RigidbodyConstraints.FreezeAll;
         }
 
         private void OnTriggerEnter(Collider other)
