@@ -37,11 +37,10 @@ namespace GVRI{
             velocity = delta / Time.deltaTime;
             oldPos = newPos;
 
-/*            if (!device.isValid)
-            {//device cannot give input
+            if (!device.isValid)
+            {
                 device = InputDevices.GetDeviceAtXRNode(node);
-                if (!device.isValid) return; //this happens if for example the controller is turned off
-            }*/
+            }
 
             bool triggerValue =  input.selectAction.action.ReadValue<float>() > 0;
             Debug.Log(triggerValue);
