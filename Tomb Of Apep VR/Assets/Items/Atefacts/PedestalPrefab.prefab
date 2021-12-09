@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 803321705813329346}
   - component: {fileID: 4362337949351823975}
   - component: {fileID: 1976750423717101229}
-  - component: {fileID: 1572261288826484538}
+  - component: {fileID: 6329461024897000356}
   m_Layer: 0
   m_Name: PedestalPrefab
   m_TagString: Untagged
@@ -82,8 +82,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1572261288826484538
-MeshCollider:
+--- !u!65 &6329461024897000356
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -92,7 +92,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: fcc419658db83f04ebca30f925b1ea66, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.020003403, y: 0.020003408, z: 0.19355845}
+  m_Center: {x: 0, y: -1.10395855e-17, z: -0.0867795}

@@ -14,12 +14,6 @@ namespace GVRI{
         {
             if (!rb) rb = gameObject.GetComponent<Rigidbody>();
         }
-
-        // Update is called once per frame
-        void Update()
-        {
-        }
-
         public void push(Vector3 force)
         {
             if (!rb) rb = gameObject.AddComponent<Rigidbody>();

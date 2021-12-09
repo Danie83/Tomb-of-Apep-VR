@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed2a23ed5d2278f4ca67e5152648be5b, type: 3}
-  m_Name: Item
+  m_Name: Medalion
   m_EditorClassIdentifier: 
   name: Medalion
   prefab: {fileID: 8908943306827569125, guid: 42a9f9a11f92e4d40b5a9fad46f2fe4c, type: 3}
