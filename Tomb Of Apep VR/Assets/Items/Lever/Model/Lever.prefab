@@ -83,7 +83,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.0013
+  m_Radius: 0.0015
   m_Center: {x: 0, y: 0, z: 0.013}
 --- !u!54 &8433529654215595719
 Rigidbody:
@@ -226,7 +226,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -211007548206913942, guid: 6d18d1275d111ee469250dd33a52d08a, type: 3}
 --- !u!1 &4379004137346335913
@@ -322,6 +322,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3682169199630124851, guid: 6d18d1275d111ee469250dd33a52d08a, type: 3}

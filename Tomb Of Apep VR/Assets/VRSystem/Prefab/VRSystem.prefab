@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LocomotionProvider: {fileID: 8545105497802956085}
-  m_MinHeight: 0
+  m_MinHeight: 1
   m_MaxHeight: Infinity
 --- !u!114 &1222243563633057349
 MonoBehaviour:
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
-  m_DragThreshold: 10
+  m_DragThreshold: 5
 --- !u!114 &8545105498210990438
 MonoBehaviour:
   m_ObjectHideFlags: 0
