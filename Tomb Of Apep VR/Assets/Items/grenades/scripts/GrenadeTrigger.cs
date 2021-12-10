@@ -15,6 +15,7 @@ public class GrenadeTrigger : MonoBehaviour
     public float timeToLive = 10f;
 
     public UnityEvent onExplode;
+    public UnityEvent onEffectGone;
                              
     private void Start()
     {
@@ -41,9 +42,16 @@ public class GrenadeTrigger : MonoBehaviour
         Destroy(gameObject, timeToLive);
     }
 
+    private void OnDestroy()
+    {
+        Debug.Log("DestroyGrenade");
+        onEffectGone.Invoke();
+    }
+
     protected virtual void Explode()
     {
         ParticleSystem = Instantiate(_particleSystem, transform);
+        Debug.Log("Explode");
         onExplode.Invoke();
     }
 }
