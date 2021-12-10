@@ -7,7 +7,7 @@ public class OpenChestScript : MonoBehaviour
     public bool locked = true;
     public GameObject explosiveChest = null;
     public GameObject openableChest = null;
-    public GameObject itemPrefab = null;
+    public GameObject itemToSpawnPrefab = null;
     public int selected = -1;
     private Transform copy;
 
@@ -50,6 +50,7 @@ public class OpenChestScript : MonoBehaviour
         selected = 2;
         GameObject openableObj = Instantiate(openableChest, copy.position, copy.rotation) as GameObject;
         Transform spawnAnchor = openableObj.GetComponentInChildren<ItemSpawnAnchor>().transform;
-        Instantiate(itemPrefab, spawnAnchor.position, spawnAnchor.rotation);
+        if (itemToSpawnPrefab != null)
+            Instantiate(itemToSpawnPrefab, spawnAnchor.position, spawnAnchor.rotation);
     }
 }

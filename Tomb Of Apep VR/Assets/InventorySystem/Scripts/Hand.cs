@@ -43,7 +43,6 @@ namespace GVRI{
             }
 
             bool triggerValue =  input.selectAction.action.ReadValue<float>() > 0;
-            Debug.Log(triggerValue);
             //was able to get input from device, so sending the result to input function to handle
             Input(triggerValue);
 
