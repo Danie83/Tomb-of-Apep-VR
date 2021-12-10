@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 249a85630effe484dade53400865c9cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemInfo: {fileID: 11400000, guid: db906ba852db1f5428afcdfd4f10efdc, type: 2}
+  itemInfo: {fileID: 11400000, guid: 836f539b541c7a54ab9ebe95a800c634, type: 2}
 --- !u!136 &8816603737867150688
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -93,8 +93,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 3
-  particleSystem: {fileID: 6859105728918462677, guid: f2019c9f4fcffbe4f885608e729bf767,
+  _particleSystem: {fileID: 6859105728918462677, guid: f2019c9f4fcffbe4f885608e729bf767,
     type: 3}
+  onExplode:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8816603737867150701}
+        m_TargetAssemblyTypeName: GrenadeTrigger, Assembly-CSharp
+        m_MethodName: DestroyGrenade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8816603738590411595
 GameObject:
   m_ObjectHideFlags: 0

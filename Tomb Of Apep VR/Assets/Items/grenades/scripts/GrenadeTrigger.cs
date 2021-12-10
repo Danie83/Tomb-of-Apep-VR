@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.VFX;
 
 public class GrenadeTrigger : MonoBehaviour
@@ -9,7 +10,11 @@ public class GrenadeTrigger : MonoBehaviour
     private bool boom = false;
     float countdown;
     private bool alreadyExploded = false;
-    public GameObject particleSystem;
+    public GameObject _particleSystem;
+    private GameObject ParticleSystem;
+    public float timeToLive = 10f;
+
+    public UnityEvent onExplode;
                              
     private void Start()
     {
@@ -26,12 +31,19 @@ public class GrenadeTrigger : MonoBehaviour
             {
                 Explode();
                 alreadyExploded = true;
-                
             }
         }
     }
+
+    public void DestroyGrenade()
+    {
+        Destroy(ParticleSystem, timeToLive);
+        Destroy(gameObject, timeToLive);
+    }
+
     protected virtual void Explode()
     {
-        Instantiate(particleSystem, transform);
+        ParticleSystem = Instantiate(_particleSystem, transform);
+        onExplode.Invoke();
     }
 }
