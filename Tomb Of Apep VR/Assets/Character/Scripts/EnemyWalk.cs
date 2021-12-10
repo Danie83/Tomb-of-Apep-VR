@@ -41,6 +41,9 @@ public class EnemyWalk : MonoBehaviour
                 agent.angularSpeed = 300;
                 break;
         }
+
+        animator.SetBool("IsStunned", isStunned);
+        animator.SetBool("IsRunning", !isStunned);
     }
 
     public void MoveToLocation(Vector3 targetPoint)
@@ -56,5 +59,6 @@ public class EnemyWalk : MonoBehaviour
     {
         isStunned = stun;
         animator.SetBool("IsStunned", stun);
+        animator.SetBool("IsRunning", !stun);
     }
 }
