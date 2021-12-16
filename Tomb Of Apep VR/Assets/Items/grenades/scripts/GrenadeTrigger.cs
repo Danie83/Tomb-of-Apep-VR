@@ -11,12 +11,12 @@ public class GrenadeTrigger : MonoBehaviour
     float countdown;
     private bool alreadyExploded = false;
     public GameObject _particleSystem;
-    private GameObject ParticleSystem;
+    protected GameObject Particle_System;
     public float timeToLive = 10f;
 
     public UnityEvent onExplode;
     public UnityEvent onEffectGone;
-                             
+
     private void Start()
     {
         countdown = timer;
@@ -28,7 +28,7 @@ public class GrenadeTrigger : MonoBehaviour
         if (boom)
         {
             countdown -= Time.deltaTime;
-            if (countdown <= 0f  && !alreadyExploded)
+            if (countdown <= 0f && !alreadyExploded)
             {
                 Explode();
                 alreadyExploded = true;
@@ -36,9 +36,9 @@ public class GrenadeTrigger : MonoBehaviour
         }
     }
 
-    public void DestroyGrenade()
+    public virtual void DestroyGrenade()
     {
-        Destroy(ParticleSystem, timeToLive);
+        Destroy(Particle_System, timeToLive);
         Destroy(gameObject, timeToLive);
     }
 
@@ -50,7 +50,7 @@ public class GrenadeTrigger : MonoBehaviour
 
     protected virtual void Explode()
     {
-        ParticleSystem = Instantiate(_particleSystem, transform);
+        Particle_System = Instantiate(_particleSystem, transform);
         Debug.Log("Explode");
         onExplode.Invoke();
     }

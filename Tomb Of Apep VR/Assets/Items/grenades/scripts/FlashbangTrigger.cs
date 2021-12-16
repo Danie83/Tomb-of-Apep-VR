@@ -6,7 +6,8 @@ public class FlashbangTrigger : GrenadeTrigger
 {
     protected override void Explode()
     {
-        Debug.Log("Bang");
+        base.Explode();
+        Debug.Log("FlashBang");
     }
 
 }
