@@ -95,7 +95,7 @@ MonoBehaviour:
   timer: 3
   _particleSystem: {fileID: 6859105728918462677, guid: f2019c9f4fcffbe4f885608e729bf767,
     type: 3}
-  timeToLive: 10
+  timeToLive: 15
   onExplode:
     m_PersistentCalls:
       m_Calls:
