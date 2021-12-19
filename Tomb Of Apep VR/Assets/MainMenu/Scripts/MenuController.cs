@@ -18,6 +18,7 @@ public class MenuController : MonoBehaviour
     private void Awake()
     {
         menuObject = this.gameObject;
+        menuObject.SetActive(isActive);
         HideAllMenus();
         currentPanel.ToggleActive(true);
         menuToggle.action.started += ToggleShowMenu;

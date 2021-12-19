@@ -35,8 +35,13 @@ public class NewGameMenu : MenuBaseComponent
         return playTutorial.isOn;
     }
 
-    public void OpenScene()
+    public void OpenScene(int scene = -1)
     {
+        if (scene != -1)
+        {
+            SceneManager.LoadScene(scene);
+            return;
+        }
         if (ToPlayTutorial())
             SceneManager.LoadScene(tutorialScene);
         else
