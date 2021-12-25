@@ -1714,6 +1714,16 @@ PrefabInstance:
       propertyPath: input
       value: 
       objectReference: {fileID: 664744139}
+    - target: {fileID: 7172323145326104633, guid: 3a951be44acad034c834778238e25fd3,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172323145326104633, guid: 3a951be44acad034c834778238e25fd3,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8545105497802956083, guid: 3a951be44acad034c834778238e25fd3,
         type: 3}
       propertyPath: m_MinHeight

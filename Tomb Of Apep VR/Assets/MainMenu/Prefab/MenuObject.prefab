@@ -2927,8 +2927,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   difficultySetting: {fileID: 4871908024177216050}
   playTutorial: {fileID: 6979948236990953275}
-  tutorialScene: 0
-  mainScene: 1
+  tutorialScene: 1
+  mainScene: 0
 --- !u!1 &4647482213977993145
 GameObject:
   m_ObjectHideFlags: 0
@@ -6636,11 +6636,11 @@ MonoBehaviour:
       - m_Target: {fileID: 7080213785054392867}
         m_TargetAssemblyTypeName: NewGameMenu, Assembly-CSharp
         m_MethodName: OpenScene
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: -1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
