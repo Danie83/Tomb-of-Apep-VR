@@ -50,7 +50,14 @@ public class EnemyWalk : MonoBehaviour
         {
             agent.destination = targetPoint;
             agent.isStopped = false;
+        } else
+        {
+            agent.isStopped = true;
         }
+    }
+    public void SetJustStun(bool stun)
+    {
+        isStunned = stun;
     }
 
     public void SetStun(bool stun)

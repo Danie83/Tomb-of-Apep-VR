@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerTargeter : MonoBehaviour
@@ -9,6 +7,7 @@ public class PlayerTargeter : MonoBehaviour
 
     void Update()
     {
-        enemyWalk.MoveToLocation(transform.position);        
+        if (enemyWalk != null)
+            enemyWalk.MoveToLocation(transform.position);        
     }
 }
