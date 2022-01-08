@@ -18,7 +18,7 @@ public class RaycastEnemy : MonoBehaviour
     void FixedUpdate()
     {
         RaycastHit hit;
-        if (Physics.SphereCast(transform.position + transform.up, 0.8f, transform.forward, out hit, 0.5f, LayerMask))
+        if (Physics.SphereCast(transform.position + transform.up, 0.8f, transform.forward, out hit, 0.4f, LayerMask))
         {
             if (prepared) {
                 Debug.Log("Found an object - distance: " + hit.distance + " " + hit.transform.gameObject.ToString());
