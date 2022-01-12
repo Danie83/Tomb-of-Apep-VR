@@ -8,6 +8,8 @@ public class EnemyWalk : MonoBehaviour
     private int dificulty = 1;
     [SerializeField]
     private bool isStunned = false;
+    [SerializeField]
+    private GameObject target;
     private NavMeshAgent agent;
     private Animator animator;
 
@@ -39,9 +41,10 @@ public class EnemyWalk : MonoBehaviour
                 agent.angularSpeed = 300;
                 break;
         }
-
-        animator.SetBool("IsStunned", isStunned);
-        animator.SetBool("IsRunning", !isStunned);
+    }
+    public void Update()
+    {
+        MoveToLocation(target.transform.position);
     }
 
     public void MoveToLocation(Vector3 targetPoint)
@@ -54,16 +57,17 @@ public class EnemyWalk : MonoBehaviour
         {
             agent.isStopped = true;
         }
-    }
-    public void SetJustStun(bool stun)
-    {
-        isStunned = stun;
+        UpdateAnim("IsStunned", isStunned);
+        UpdateAnim("IsRunning", !isStunned);
     }
 
     public void SetStun(bool stun)
     {
         isStunned = stun;
-        animator.SetBool("IsStunned", stun);
-        animator.SetBool("IsRunning", !stun);
+    }
+
+    public void UpdateAnim(string who, bool value)
+    {
+        animator.SetBool(who, value);
     }
 }
