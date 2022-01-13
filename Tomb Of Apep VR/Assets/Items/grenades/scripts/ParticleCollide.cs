@@ -12,6 +12,9 @@ public class ParticleCollide : MonoBehaviour
             if (player != null)
             {
                 player.TakeDamage(particleDamage);
+            } else if (tag.Equals("enemy")) {
+                EnemyWalk enemy = GetComponent<EnemyWalk>();
+                enemy.SetStun(true);
             }
         } catch (Exception ex)
         {
