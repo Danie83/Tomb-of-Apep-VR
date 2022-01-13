@@ -23,6 +23,8 @@ public class EnemyWalk : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        if (!agent.isOnNavMesh)
+            return;
         switch (dificulty)
         {
             case 1:
@@ -49,6 +51,8 @@ public class EnemyWalk : MonoBehaviour
     }
     public void Update()
     {
+        if (!agent.isOnNavMesh)
+            return;
         MoveToLocation(target.transform.position);
     }
 
