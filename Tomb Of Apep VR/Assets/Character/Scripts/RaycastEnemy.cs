@@ -18,13 +18,12 @@ public class RaycastEnemy : MonoBehaviour
     void FixedUpdate()
     {
         RaycastHit hit;
-        if (Physics.SphereCast(transform.position + transform.up, 0.8f, transform.forward, out hit, 0.5f, LayerMask))
+        if (Physics.SphereCast(transform.position + transform.up, 0.8f, transform.forward, out hit, 0.4f, LayerMask))
         {
             if (prepared) {
                 Debug.Log("Found an object - distance: " + hit.distance + " " + hit.transform.gameObject.ToString());
-                animator.SetBool("IsRunning", false);
                 animator.SetBool("IsAttacking", true);
-                enemy.SetJustStun(true);
+                enemy.SetStun(true);
                 prepared = false;
             }
             Player player = hit.transform.gameObject.GetComponent<Player>();
@@ -40,9 +39,8 @@ public class RaycastEnemy : MonoBehaviour
         {
             damageCountdown = 1;
             prepared = true;
-            animator.SetBool("IsRunning", true);
             animator.SetBool("IsAttacking", false);
-            enemy.SetJustStun(false);
+            enemy.SetStun(false);
         }
 
     }
