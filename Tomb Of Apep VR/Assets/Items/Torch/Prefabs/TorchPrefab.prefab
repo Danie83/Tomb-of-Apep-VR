@@ -134,6 +134,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7679009255960864558, guid: 49380037e3a75f54aab830023446db75,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 93.80807
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679009255960864559, guid: 49380037e3a75f54aab830023446db75,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 7.4650087
+      objectReference: {fileID: 0}
+    - target: {fileID: 7679009255960864559, guid: 49380037e3a75f54aab830023446db75,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 3555
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49380037e3a75f54aab830023446db75, type: 3}
 --- !u!4 &4824916197817699443 stripped
