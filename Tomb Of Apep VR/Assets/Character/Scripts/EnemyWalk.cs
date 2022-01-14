@@ -29,22 +29,22 @@ public class EnemyWalk : MonoBehaviour
         {
             case 1:
                 agent.acceleration = 20;
-                agent.speed = 1;
+                agent.speed = 0.5f;
                 agent.angularSpeed = 300;
                 break;
             case 2:
                 agent.acceleration = 20;
-                agent.speed = 2;
+                agent.speed = 1;
                 agent.angularSpeed = 300;
                 break;
             case 3:
                 agent.acceleration = 20;
-                agent.speed = 2.5f;
+                agent.speed = 1.5f;
                 agent.angularSpeed = 300;
                 break;
             default:
                 agent.acceleration = 20;
-                agent.speed = 1;
+                agent.speed = 0.5f;
                 agent.angularSpeed = 300;
                 break;
         }
