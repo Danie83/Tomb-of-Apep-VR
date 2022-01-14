@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class SoundController : MonoBehaviour
 {
     public float volume = 1f;
@@ -12,6 +13,7 @@ public class SoundController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(this);
         audioSource = GetComponent<AudioSource>();
     }
 
