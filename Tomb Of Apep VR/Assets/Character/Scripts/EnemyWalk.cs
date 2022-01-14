@@ -8,14 +8,23 @@ public class EnemyWalk : MonoBehaviour
     private int dificulty = 1;
     [SerializeField]
     private bool isStunned = false;
+    [SerializeField]
+    private GameObject target;
     private NavMeshAgent agent;
     private Animator animator;
+
+    private void Awake()
+    {
+        target = Camera.main.gameObject;
+    }
 
     // Use this for initialization
     void Start()
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        if (!agent.isOnNavMesh)
+            return;
         switch (dificulty)
         {
             case 1:
@@ -39,9 +48,12 @@ public class EnemyWalk : MonoBehaviour
                 agent.angularSpeed = 300;
                 break;
         }
-
-        animator.SetBool("IsStunned", isStunned);
-        animator.SetBool("IsRunning", !isStunned);
+    }
+    public void Update()
+    {
+        if (!agent.isOnNavMesh)
+            return;
+        MoveToLocation(target.transform.position);
     }
 
     public void MoveToLocation(Vector3 targetPoint)
@@ -55,15 +67,15 @@ public class EnemyWalk : MonoBehaviour
             agent.isStopped = true;
         }
     }
-    public void SetJustStun(bool stun)
-    {
-        isStunned = stun;
-    }
 
     public void SetStun(bool stun)
     {
         isStunned = stun;
-        animator.SetBool("IsStunned", stun);
-        animator.SetBool("IsRunning", !stun);
+        UpdateAnim("IsRunning", !isStunned);
+    }
+
+    public void UpdateAnim(string who, bool value)
+    {
+        animator.SetBool(who, value);
     }
 }

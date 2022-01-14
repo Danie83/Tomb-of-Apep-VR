@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerHand
   - Trap
+  - enemy
   layers:
   - Default
   - TransparentFX
